@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Advanced Security</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="style.css" type="text/css" rel="stylesheet">
+        <style>
+            #main{
+                height:1000px;
+             background-image:url(images/imag.jpg);
+             background-repeat: no-repeat;
+             background-size:100% 800px;
+             background-attachment: fixed;
+            }
+            table th{
+                background-color: blue;
+                color:white;
+                height:50px;
+            }
+            table td{
+               background-color: lightgoldenrodyellow;
+               height:40px;
+            }
+            input{
+                width:300px;
+                height:30px;
+            }
+            #image{
+                
+                border:none;
+                width:auto;
+                height:300px;
+                margin-top:70px;
+               float:right;
+               margin-right:330px;
+                margin-bottom:300px;
+                background-image:url(images/indian-army.png);
+             background-repeat: no-repeat;
+             background-size:300px 300px;
+            }
+            #list{
+               margin-right:150px;
+              
+                width:auto;
+                height:auto;  
+                margin-top: 300px;
+            }
+             
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <center><h1>ADVANCE SECURITY IN CLOUD COMPUTING FOR MILITARY WEAPON</h1></center> 
+            
+            <div id="links">
+                <ul>
+                    <li><a style="margin-left:60px;" href="AdminLogin.jsp">LogOut</a></li>
+                         <li><a href="View_Request.jsp">View Request</a></li>
+                       <li><a href="Users_List.jsp">User List</a></li>
+                      <li><a style="margin-left:60px;" href="A_Home.jsp">HOME</a></li> 
+                      
+                </ul>
+            
+            </div> 
+            <div id='image'> 
+            <div id='list'>
+                 <h2 style="margin-left:100px;color:blueviolet;">Register's List</h2>
+                    <table>
+                        <tr>
+                        <th>UserName</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Mobile</th>
+                        <th>Authorize</th>
+                        </tr>
+                    <%@page import="java.sql.*"%>
+<%
+                         Connection con=null;
+            Statement st= null;
+            ResultSet rs=null;
+             ResultSet rs1=null;
+             ResultSet rs2=null;
+              
+String requested="";
+             try
+                  {
+                      Class.forName("com.mysql.jdbc.Driver");
+             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/military","root","root");
+             st = con.createStatement();
+             rs=st.executeQuery("select * from user");
+             while(rs.next())
+             {
+
+String status=rs.getString("status");%>
+             <tr>
+                 <td><%=rs.getString(1)%></td>
+                 <td><%=rs.getString(3)%></td>
+                
+                 <td><%=rs.getString(4)%></td>
+                 <td><%=rs.getString(5)%></td>
+                 <%if(status.equals("waiting")){%>
+                 <td><a href="AcceptUser.jsp?email=<%=rs.getString(3)%>"><font color="red">waiting</font></a></td>
+                 <%}else{%>
+                 <td><font color="green"><%=rs.getString(7)%></font></td>
+                 <%}%>
+             </tr>
+                    <% }
+                  }
+             catch(Exception e)
+                     {
+                     out.println(e);
+                     }
+
+                         %>
+                </table>
+            </div>  
+            </div>
+              
+            
+        </div>
+    </body>
+</html>

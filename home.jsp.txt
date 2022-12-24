@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Advanced Security</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="style.css" type="text/css" rel="stylesheet">
+        <style>
+            #main{
+                height:800px;
+             background-image:url(images/imag.jpg);
+             background-repeat: no-repeat;
+             background-size:100% 800px;
+             background-attachment: fixed;
+            }
+            table th{
+                color:white;
+            }
+            input{
+                width:300px;
+                height:30px;
+            }
+            #image{
+                
+                border:none;
+                width:300px;
+                height:300px;
+                margin-top:70px;
+               float:right;
+               margin-right:530px;
+                margin-bottom:300px;
+                background-image:url(images/indian-army.png);
+             background-repeat: no-repeat;
+             background-size:300px 300px;
+            }
+             
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <center><h1>ADVANCE SECURITY IN CLOUD COMPUTING FOR MILITARY WEAPON</h1></center> 
+            
+            <div id="links">
+                <ul>
+                    <li><a style="margin-left:60px;" href="AdminLogin.jsp">LogOut</a></li>
+                        <li><a href="View_Request.jsp">View Request</a></li>
+                       <li><a href="Users_List.jsp">User List</a></li>
+                      <li><a style="margin-left:60px;" href="A_Home.jsp">HOME</a></li> 
+                      
+                </ul>
+            
+            </div> 
+            <div id='image'>
+                
+                <font color="green" size="6" style="margin-left:300px;">welcome:ADMIN</font>
+            </div>
+            
+            
+        </div>
+    </body>
+</html>
